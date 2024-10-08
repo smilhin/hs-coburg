@@ -1,5 +1,5 @@
 
-public class Main {
+public class Uebung1 {
     public static void main(String[] args) {
 
         System.out.println("ggt von 1974 und 2022 (iterativ):" + ggTIter(1974, 2022));

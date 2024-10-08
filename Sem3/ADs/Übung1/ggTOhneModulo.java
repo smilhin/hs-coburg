@@ -1,5 +1,5 @@
 
-public class Main {
+public class ggTOhneModulo {
     public static void main(String[] args) {
 
         System.out.println("ggT:  " + ggT(1974, 2022));
