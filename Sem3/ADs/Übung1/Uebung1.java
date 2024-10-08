@@ -1,5 +1,5 @@
 
-public class Main {
+public class Uebung1 {
     public static void main(String[] args) {
 
         System.out.println("ggt von 1974 und 2022 (iterativ):" + ggTIter(1974, 2022));
@@ -48,12 +48,7 @@ public class Main {
         return -1;
     }
 
-    /**
-     * Calculates the faculty recursively
-     *
-     * @param n the number to calculate the faculty for
-     * @return the faculty of n
-     */
+   
     public static int facRec(int n) {
 
         if(n == 0 || n == 1) {
