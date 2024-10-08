@@ -48,12 +48,7 @@ public class Uebung1 {
         return -1;
     }
 
-    /**
-     * Calculates the faculty recursively
-     *
-     * @param n the number to calculate the faculty for
-     * @return the faculty of n
-     */
+   
     public static int facRec(int n) {
 
         if(n == 0 || n == 1) {
