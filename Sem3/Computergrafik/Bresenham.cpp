@@ -42,7 +42,7 @@ int main() {
 
 	bresenham(vector, a, b);
 
-	for (auto k : vector)
+	for (auto &k : vector)
 	{
 		std::cout << k.getInt2();
 	}
