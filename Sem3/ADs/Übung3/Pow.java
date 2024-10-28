@@ -2,10 +2,10 @@ public class Pow {
 
     public static void main(String[] srg) {
 
-        System.out.println(pow(2, 6));
-        System.out.println(pow(3, 4));
-        System.out.println(pow(10, 5));
-        System.out.println(pow(4, 3));
+        System.out.println(pow_log(2, 6));
+        System.out.println(pow_log(3, 4));
+        System.out.println(pow_log(10, 5));
+        System.out.println(pow_log(4, 3));
 
     }
 
@@ -30,6 +30,19 @@ public class Pow {
         return result;
     }
 
+    public static long pow_log(long x, int n) {
+
+        if(n == 1) {
+            return x;
+        }
+        if(n % 2 == 0) {
+            return pow_log(x * x, n / 2);
+        }
+        else if(n % 2 == 1) {
+            return pow_log(x*x, (n-1) / 2) * x;
+        }
+        return 0;
+    }
 }
 
 
