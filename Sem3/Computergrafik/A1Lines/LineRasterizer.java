@@ -1,3 +1,6 @@
+import java.lang.Math;
+
+
 public final class LineRasterizer
 {
   
@@ -18,49 +21,58 @@ public final class LineRasterizer
     }
     
   }
-  
-  private static final void drawLine_x_fast(int[] framebuffer, int w, int2 a, int2 b, int col)
+
+  // draline_x_fast und draline_y_fast in einer Funktion zusammengefasst
+  private static final void drawLine_fast(int[] framebuffer, int w, int2 a, int2 b, int col)
   {
+  
+        int dx = Math.abs(b.x - a.x);
+        int dy = Math.abs(b.y - a.y);
 
-    if(b.x < a.x)
-    {
-      int c = a.x;
-      a.x = b.x;
-      b.x = c;
-    }
-    
-    int y = a.y;
-    int err = 0;
-    
-    if(b.y < a.y) 
-    {
-      for(int x = a.x; x <= b.x; x++) 
-      {
-      if(err >= b.x - a.x) 
-      {
-        y--;
-        err += -2 * (b.x - a.x);
-      }
-      err += 2 * (a.y - b.y);
-      framebuffer[y * w + x] = col;
-      }
-   }
-   else
-    {
-    for(int x = a.x; x <= b.x; x++) 
-    {
-      if(err >= b.x - a.x) 
-      {
-        y++;
-        err += -2 * (b.x - a.x);
-      }
-      err += 2 * (b.y - a.y);
-      framebuffer[y * w + x] = col;
-    }
-    }
+        // Richtung des Inkrements bestimmen
+        int sx = (b.x > a.x) ? 1 : -1;
+        int sy = (b.y > a.y) ? 1 : -1;
 
+        // dx und dy tauschen, wenn die Steigung steil ist
+        boolean swap = dy > dx;
+        if (swap) {
+            int temp = dx;
+            dx = dy;
+            dy = temp;
+        }
+
+        // error init
+        int err = 0;
+
+        // startpunkt
+        int x = a.x;
+        int y = a.y;
+
+        // von 0 bis dx iterieren
+        for (int i = 0; i <= dx; i++) {
+            // punkt einfärben
+           framebuffer[y * w + x] = col;
+            //error und punkte aktualisieren
+            if (err >= 0) {
+                if (swap) {
+                    x += sx;
+                } else {
+                    y += sy;
+                }
+                err += -2 * dx;
+            }
+
+            if (swap) {
+                y += sy;
+            } else {
+                x += sx;
+            }
+            err += 2 * dy;
+        }
+    
     
   }
+  
 
   public static final void drawLine(int[] framebuffer, int w, int h, int2 a, int2 b, int col)
   {
@@ -70,6 +82,7 @@ public final class LineRasterizer
       return;
     }
 
-    drawLine_x_fast(framebuffer, w,a, b, col);
+     drawLine_fast(framebuffer, w,a, b, col); 
+   
   }
 }
