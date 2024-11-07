@@ -1,0 +1,8 @@
+#pragma once
+
+enum Build
+{
+	EMPTY, WASSERKRAFTWERK, WINDKRAFTWERK, SOLARPANEL
+};
+
+
