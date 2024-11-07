@@ -9,8 +9,9 @@ int main(int argc, char **argv)
 		int width = std::atoi(argv[2]);
 	
 		Capycity capycity = Capycity(length, width);
-		
+	
 		capycity.Run();
+
 
 
 }

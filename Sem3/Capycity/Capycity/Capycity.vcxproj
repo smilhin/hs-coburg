@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lib\Building.cpp" />
     <ClCompile Include="src\Capycity.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
