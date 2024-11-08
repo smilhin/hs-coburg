@@ -8,7 +8,8 @@ Capycity::Capycity(const int& length, const int& width)
 void Capycity::Run()
 {
 
-	Build** build_area = Capycity::CreateArray(_length, _width);
+	Build** build_area = Capycity::CreateArray();
+	InitArray(build_area);
 
 	while (true)
 	{
@@ -33,14 +34,22 @@ void Capycity::Run()
 			std::cout << "Position: ";
 			std::cin >> build_position;
 
-			for (int i = build_position; i < (build_position + build_length); i++)
+			if (CheckPlace(build_area, build_position, build_length, build_width))
 			{
-				for (int j = 0; j < build_width; j++)
+
+				for (int i = build_position; i < (build_position + build_length); i++)
 				{
-					build_area[i][j] = art;
-					std::cout << build_area[i][j] << " ";
+					for (int j = 0; j < build_width; j++)
+					{
+						build_area[i][j] = art;
+						std::cout << build_area[i][j] << " ";
+					}
+					std::cout << "\n";
 				}
-				std::cout << "\n";
+			}
+			else
+			{
+				std::cout << "Ungueltige Eingabe >:(\n";
 			}
 
 		}
@@ -50,7 +59,7 @@ void Capycity::Run()
 		}
 		else if (choice == 'A')
 		{
-			std::cout << choice << "\n";
+			PrintArray(build_area);
 
 		}
 		else if (choice == 'E')
@@ -64,30 +73,77 @@ void Capycity::Run()
 		}
 	}
 
-	Capycity::DeleteArray(build_area, _length);
+	Capycity::DeleteArray(build_area);
 }
 
-Build** Capycity::CreateArray(const int& length, const int& width)
+
+//Array-Funktionen
+
+Build** Capycity::CreateArray()
 {
 
-	Build** build_area = new Build* [length];
+	Build** build_area = new Build* [_length];
 
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < _length; i++)
 	{
-		build_area[i] = new Build[width];
+		build_area[i] = new Build[_width];
 	}
 
 	return build_area;
 
 }
 
-void Capycity::DeleteArray(Build** array, const int& length)
+void Capycity::DeleteArray(Build** array)
 {
 
-	for (int i = 0; i < length; ++i) {
+	for (int i = 0; i < _length; ++i) {
 		delete[] array[i];
 	}
 
 	delete[] array;
 
+}
+
+void Capycity::InitArray(Build** array)
+{
+	for (int i = 0; i < _length; i++)
+	{
+		for (int j = 0; j < _width; j++)
+		{
+			array[i][j] = Build::EMPTY;
+		}
+	}
+}
+
+
+void Capycity::PrintArray(Build** array)
+{
+	for (int i = 0; i < _length; i++)
+	{
+		for (int j = 0; j < _width; j++)
+		{
+			std::cout << array[i][j] << "   ";
+		}
+		std::cout << "\n\n";
+	}
+}
+
+//Prüfiing Kollidierung
+
+bool Capycity::CheckPlace(Build** array, const int& position, const int& length, const int& width)
+{
+
+	if (position + length > _length || width > _width) return false;
+
+
+	for (int i = position; i < (position + length); i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (array[i][j] == 0) continue;
+			else return false;
+		}
+	}
+
+	return true;
 }

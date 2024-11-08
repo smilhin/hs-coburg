@@ -14,9 +14,15 @@ public:
 
 	void Run();
 
-	Build** CreateArray(const int& length, const int& width);
+	Build** CreateArray();
 
-	void DeleteArray(Build** array, const int& length);
+	void InitArray(Build** array);
+
+	void DeleteArray(Build** array);
+
+	void PrintArray(Build** array);
+
+	bool CheckPlace(Build** array, const int& position, const int& length, const int& width);
 
 private:
 	const int _length, _width;
