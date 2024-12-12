@@ -1,3 +1,8 @@
-C:\C++\Capycity\Capycity\lib\Building.cpp;C:\C++\Capycity\Capycity\x64\Debug\Building.obj
-C:\C++\Capycity\Capycity\src\Capycity.cpp;C:\C++\Capycity\Capycity\x64\Debug\Capycity.obj
-C:\C++\Capycity\Capycity\src\Main.cpp;C:\C++\Capycity\Capycity\x64\Debug\Main.obj
+C:\C++\Capycity\Capycity\lib\cpp\Building.cpp;C:\C++\Capycity\Capycity\x64\Debug\Building.obj
+C:\C++\Capycity\Capycity\lib\header\Holz.h;C:\C++\Capycity\Capycity\x64\Debug\Holz.h.obj
+C:\C++\Capycity\Capycity\lib\header\Metall.h;C:\C++\Capycity\Capycity\x64\Debug\Metall.h.obj
+C:\C++\Capycity\Capycity\lib\header\Solarpanel.h;C:\C++\Capycity\Capycity\x64\Debug\Solarpanel.h.obj
+C:\C++\Capycity\Capycity\lib\header\Wasserkraftwerk.h;C:\C++\Capycity\Capycity\x64\Debug\Wasserkraftwerk.h.obj
+C:\C++\Capycity\Capycity\lib\header\Windkraftwerk.h;C:\C++\Capycity\Capycity\x64\Debug\Windkraftwerk.h.obj
+C:\C++\Capycity\Capycity\src\cpp\Capycity.cpp;C:\C++\Capycity\Capycity\x64\Debug\Capycity.obj
+C:\C++\Capycity\Capycity\src\cpp\Main.cpp;C:\C++\Capycity\Capycity\x64\Debug\Main.obj

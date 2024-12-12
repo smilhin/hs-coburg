@@ -1,0 +1,8 @@
+#directories
+.vs/
+Capycity/x64/
+
+#files
+*.user
+*.filters
+*.vcxproj

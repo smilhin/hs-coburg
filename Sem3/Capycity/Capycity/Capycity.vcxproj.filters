@@ -15,21 +15,42 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Main.cpp">
+    <ClCompile Include="src\cpp\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Capycity.cpp">
+    <ClCompile Include="src\cpp\Capycity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lib\Building.cpp">
+    <ClCompile Include="lib\cpp\Building.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\header\Holz.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\header\Metall.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\header\Wasserkraftwerk.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\header\Windkraftwerk.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\header\Solarpanel.h">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lib\Building.h">
+    <ClInclude Include="lib\header\Building.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Capycity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\header\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\header\Kunststoff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

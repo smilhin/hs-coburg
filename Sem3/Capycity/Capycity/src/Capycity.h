@@ -3,7 +3,7 @@
 #include <array>
 #include <iostream>
 
-#include "../lib/Building.h"
+#include "../lib/header/Building.h"
 
 
 class Capycity
@@ -14,18 +14,21 @@ public:
 
 	void Run();
 
-	Build** CreateArray();
+	Building** CreateArray();
 
-	void InitArray(Build** array);
+	void InitArray(Building** array);
 
-	void DeleteArray(Build** array);
+	void DeleteArray(Building** array);
 
-	void PrintArray(Build** array);
+	void PrintArray(Building** array);
 
-	bool CheckPlace(Build** array, const int& position, const int& length, const int& width);
+	void PrintBuildingPlan(Building** array, const std::string& type);
+
+	void PrintMaterials(Building** array);
+
+	bool CheckPlace(Building** array, const int& position1, const int& position2, const int& length, const int& width);
 
 private:
 	const int _length, _width;
 
 };
-
