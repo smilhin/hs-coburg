@@ -1,0 +1,1 @@
+Sammlung meiner Abgaben für den Kurs Künstliche Intelligenz 1 (KI1)
