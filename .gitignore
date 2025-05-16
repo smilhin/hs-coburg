@@ -1,12 +1,9 @@
-
-Sem3/ads-smilhin/
-
 #Directories
 
 .vs/
 bin/
 bin-int/
 
-#Files
+Files
 
 *.user
